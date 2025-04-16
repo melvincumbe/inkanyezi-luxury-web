@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ShoppingBag, Search, User } from "lucide-react";
@@ -13,8 +12,8 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <span className="text-3xl font-playfair font-bold tracking-tight">
-            <span className="text-luxury-black">INKAN</span>
-            <span className="text-luxury-gold">YEZI</span>
+            <span className="text-luxury-black">AFRICAN</span>
+            <span className="text-luxury-gold">STYLE</span>
           </span>
         </Link>
 

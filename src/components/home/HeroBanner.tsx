@@ -25,7 +25,7 @@ const HeroBanner = () => {
               Estilo não se veste, <span className="text-luxury-gold italic">se incorpora...</span>
             </h1>
             <p className="font-montserrat text-sm md:text-base text-white/80 mb-8 max-w-lg mx-auto">
-              Exclusive luxury fashion from top brands. Fast shipping to Brazil, Netherlands and worldwide.
+              Exclusive African fashion from top designers. Fast shipping to Brazil, Netherlands and worldwide.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button 
