@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, FilterX } from "lucide-react";
+import { ProductRequestForm } from "@/components/ui/product-request-form";
 
 const Products = () => {
   // Sample product data - in a real app, this would come from an API
@@ -170,6 +171,11 @@ const Products = () => {
               <FilterX className="h-4 w-4 mr-2" />
               Reset
             </Button>
+          </div>
+          
+          {/* Product Request Form */}
+          <div className="flex justify-center mt-4">
+            <ProductRequestForm />
           </div>
         </div>
 
