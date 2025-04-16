@@ -78,15 +78,15 @@ const Products = () => {
 
   // Filter states
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedBrand, setSelectedBrand] = useState("");
-  const [priceSort, setPriceSort] = useState("");
+  const [selectedBrand, setSelectedBrand] = useState("all");
+  const [priceSort, setPriceSort] = useState("default");
   const [exclusiveOnly, setExclusiveOnly] = useState(false);
 
   // Filter and sort products
   const filteredProducts = allProducts.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           product.brand.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesBrand = selectedBrand === "" || product.brand === selectedBrand;
+    const matchesBrand = selectedBrand === "all" || product.brand === selectedBrand;
     const matchesExclusive = !exclusiveOnly || product.isExclusive;
     
     return matchesSearch && matchesBrand && matchesExclusive;
@@ -102,8 +102,8 @@ const Products = () => {
   // Reset all filters
   const resetFilters = () => {
     setSearchTerm("");
-    setSelectedBrand("");
-    setPriceSort("");
+    setSelectedBrand("all");
+    setPriceSort("default");
     setExclusiveOnly(false);
   };
 
@@ -134,7 +134,7 @@ const Products = () => {
                   <SelectValue placeholder="All Brands" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Brands</SelectItem>
+                  <SelectItem value="all">All Brands</SelectItem>
                   <SelectItem value="Gucci">Gucci</SelectItem>
                   <SelectItem value="Louis Vuitton">Louis Vuitton</SelectItem>
                   <SelectItem value="Saint Laurent">Saint Laurent</SelectItem>
@@ -147,7 +147,7 @@ const Products = () => {
                   <SelectValue placeholder="Price: Default" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">Price: Default</SelectItem>
+                  <SelectItem value="default">Price: Default</SelectItem>
                   <SelectItem value="asc">Price: Low to High</SelectItem>
                   <SelectItem value="desc">Price: High to Low</SelectItem>
                 </SelectContent>
