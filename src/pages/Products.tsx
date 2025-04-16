@@ -111,7 +111,7 @@ const Products = () => {
     <Layout>
       <div className="container mx-auto px-4 py-12">
         <h1 className="font-playfair text-3xl md:text-4xl font-bold mb-8">
-          Luxury <span className="text-luxury-gold">Collection</span>
+          AfricanStyle <span className="text-luxury-gold">Inkanyezi</span> Luxury <span className="text-luxury-gold">Collection</span>
         </h1>
 
         {/* Filters */}
