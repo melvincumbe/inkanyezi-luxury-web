@@ -1,6 +1,6 @@
-
 import { Link } from "react-router-dom";
 import { Badge } from "./badge";
+import { CartButton } from "./cart-button";
 
 export interface Product {
   id: string;
@@ -32,17 +32,20 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
       </div>
-      <div className="mt-4 flex justify-between">
-        <div>
-          <h3 className="font-playfair text-sm font-medium text-luxury-black">
-            <Link to={`/products/${product.id}`}>
-              <span aria-hidden="true" className="absolute inset-0" />
-              {product.name}
-            </Link>
-          </h3>
-          <p className="mt-1 font-montserrat text-xs text-gray-600 uppercase tracking-wider">{product.brand}</p>
+      <div className="mt-4 space-y-2">
+        <div className="flex justify-between">
+          <div>
+            <h3 className="font-playfair text-sm font-medium text-luxury-black">
+              <Link to={`/products/${product.id}`}>
+                <span aria-hidden="true" className="absolute inset-0" />
+                {product.name}
+              </Link>
+            </h3>
+            <p className="mt-1 font-montserrat text-xs text-gray-600 uppercase tracking-wider">{product.brand}</p>
+          </div>
+          <p className="font-montserrat text-sm font-medium text-luxury-black">${product.price.toLocaleString()}</p>
         </div>
-        <p className="font-montserrat text-sm font-medium text-luxury-black">${product.price.toLocaleString()}</p>
+        <CartButton product={product} />
       </div>
     </div>
   );
